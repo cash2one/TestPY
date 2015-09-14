@@ -1,0 +1,22 @@
+name: test01
+
+topology:
+
+    - spout:
+        name: TestSpout
+        module: com.test.storm.test01.TestSpout
+
+    - bolt:
+        name: split-words
+        module: com.test.storm.test01.TestBolt
+        groupings:
+            - shuffle_grouping: line-spout
+
+    - bolt:
+        name: count-words
+        module: TestBolt
+        groupings:
+            - fields_grouping:
+                component: split-words
+                fields:
+                    - word
