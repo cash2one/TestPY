@@ -1,0 +1,7 @@
+# syntax: !obj:<package>[.<subpackage>]*.<module>.<object>
+!obj:com.test.pylearn2.t01.AutoEncoder.AutoEncoder {
+   "nvis": 784,
+   "nhid": 100,
+   "iscale": 0.2,
+}
+
