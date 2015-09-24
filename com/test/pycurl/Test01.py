@@ -6,30 +6,30 @@ Created on 2015年5月11日
 @author: BFD474
 '''
 
-import pycurl
+from pycurl import *
 import StringIO
 import urllib
 #------------------------自动处理cookile的函数----------------------------------#
 '''初始化一个pycurl对象，尽管urllib2也支持 cookie 但是在登录cas系统时总是失败，并且没有搞清楚失败的原因。这里采用pycurl主要是因为pycurl设置了cookie后，可以正常登录Cas系统'''
 def initCurl():
-    c = pycurl.Curl()
-    c.setopt(pycurl.COOKIEFILE, "cookie_file_name")  # 把cookie保存在该文件中
-    c.setopt(pycurl.COOKIEJAR, "cookie_file_name")
-    c.setopt(pycurl.FOLLOWLOCATION, 1)  # 允许跟踪来源
-    c.setopt(pycurl.MAXREDIRS, 5)
+    c = Curl()
+    c.setopt( COOKIEFILE, "cookie_file_name" )  # 把cookie保存在该文件中
+    c.setopt( COOKIEJAR, "cookie_file_name" )
+    c.setopt( FOLLOWLOCATION, 1 )  # 允许跟踪来源
+    c.setopt( MAXREDIRS, 5 )
     # 设置代理 如果有需要请去掉注释，并设置合适的参数
     # c.setopt(pycurl.PROXY, ‘http://11.11.11.11:8080′)
     # c.setopt(pycurl.PROXYUSERPWD, ‘aaa:aaa’)
     return c
 #-----------------------------------get函数-----------------------------------#
 '''获得url指定的资源，这里采用了HTTP的GET方法'''
-def GetDate(curl, url):
+def GetDate( curl, url ):
     head = ['Accept:*/*',
             'User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0']
     buf = StringIO.StringIO()
-    curl.setopt(pycurl.WRITEFUNCTION, buf.write)
-    curl.setopt(pycurl.URL, url)
-    curl.setopt(pycurl.HTTPHEADER, head)
+    curl.setopt( WRITEFUNCTION, buf.write )
+    curl.setopt( URL, url )
+    curl.setopt( HTTPHEADER, head )
     curl.perform()
     the_page = buf.getvalue()
     buf.close()
@@ -39,7 +39,7 @@ def GetDate(curl, url):
 备注，这里提交的数据为json数据，
 如果需要修改数据类型，请修改head中的数据类型声明
 '''
-def PostData(curl, url, data):
+def PostData( curl, url, data ):
     head = ['Accept:*/*',
             'Content-Type:application/xml',
             'render:json',
@@ -49,10 +49,10 @@ def PostData(curl, url, data):
             'Accept-Language:zh-CN,zh;q=0.8',
             'User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0']
     buf = StringIO.StringIO()
-    curl.setopt(pycurl.WRITEFUNCTION, buf.write)
-    curl.setopt(pycurl.POSTFIELDS, data)
-    curl.setopt(pycurl.URL, url)
-    curl.setopt(pycurl.HTTPHEADER, head)
+    curl.setopt( WRITEFUNCTION, buf.write )
+    curl.setopt( POSTFIELDS, data )
+    curl.setopt( URL, url )
+    curl.setopt( HTTPHEADER, head )
     curl.perform()
     the_page = buf.getvalue()
     # print the_page
@@ -60,5 +60,5 @@ def PostData(curl, url, data):
     return the_page
 #-----------------------------------post函数-----------------------------------#
 c = initCurl()
-html = GetDate(c, 'http://www.qq.com')
+html = GetDate( c, 'http://www.qq.com' )
 print html
