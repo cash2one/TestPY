@@ -6,11 +6,11 @@ Created on 2015年6月15日
 @author: BFD474
 '''
 
+
 import random
 
 from nltk import pos_tag
 import nltk
-from nltk.corpus import brown
 from nltk.corpus import brown
 
 

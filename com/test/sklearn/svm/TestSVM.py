@@ -6,9 +6,11 @@ Created on 2015年6月5日
 @author: BFD474
 '''
 
-import numpy as np
-import matplotlib.pyplot as plt
 from sklearn import svm
+
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 xx, yy = np.meshgrid( np.linspace( -3, 3, 500 ),
                      np.linspace( -3, 3, 500 ) )
@@ -24,12 +26,12 @@ clf.fit( X, Y )
 Z = clf.decision_function( np.c_[xx.ravel(), yy.ravel()] )
 Z = Z.reshape( xx.shape )
 
-plt.imshow( Z, interpolation='nearest',
-           extent=( xx.min(), xx.max(), yy.min(), yy.max() ), aspect='auto',
-           origin='lower', cmap=plt.cm.PuOr_r )
-contours = plt.contour( xx, yy, Z, levels=[0], linewidths=2,
-                       linetypes='--' )
-plt.scatter( X[:, 0], X[:, 1], s=30, c=Y, cmap=plt.cm.Paired )
+plt.imshow( Z, interpolation = 'nearest',
+           extent = ( xx.min(), xx.max(), yy.min(), yy.max() ), aspect = 'auto',
+           origin = 'lower', cmap = plt.cm.PuOr_r )
+contours = plt.contour( xx, yy, Z, levels = [0], linewidths = 2,
+                       linetypes = '--' )
+plt.scatter( X[:, 0], X[:, 1], s = 30, c = Y, cmap = plt.cm.Paired )
 plt.xticks( () )
 plt.yticks( () )
 plt.axis( [-3, 3, -3, 3] )
