@@ -6,11 +6,14 @@ Created on 2015年5月29日
 @author: BFD474
 '''
 
+import logging
 import random
 
 from pyleus.storm import Spout
 
-import component
+# import component
+
+log = logging.getLogger(__name__)
 
 LINES = """
 Lorem ipsum dolor sit amet, consectetur

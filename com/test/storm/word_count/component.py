@@ -1,6 +1,10 @@
-"""Module containing the base class for all pyleus components and a wrapper
+# coding=utf-8
+
+"""
+Module containing the base class for all pyleus components and a wrapper
 class around Storm configurations.
 """
+
 from __future__ import absolute_import
 
 import argparse
