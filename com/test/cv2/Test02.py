@@ -41,7 +41,7 @@ while success:
         for faceRect in faceRects:  # 对每一个人脸画矩形框
                 x, y, w, h = faceRect
                 cv2.rectangle( frame, ( x, y ), ( x + w, y + h ), color )
-    cv2.imshow( "test", frame )  # 显示图像
+    cv2.imshow( TESTNAME, frame )  # 显示图像
     key = cv2.waitKey( 10 )
     c = chr( key & 255 )
     if c in ['q', 'Q', chr( 27 )]:
