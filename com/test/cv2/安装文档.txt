@@ -1,0 +1,37 @@
+2016-04-21
+
+opencv 安装文档
+
+1、在 http://opencv.org/ 下载最新版本的应用，要依据使用系统
+比如：我使用的是 windows 系统，下载版本是 opencv-3.1.0.exe
+
+2、将 opencv-x.x.x.exe 解压到一个目录下
+
+3、将 D:\developments\python\opencv\build\python\2.7\x86\cv2.pyd 放置到 D:\developments\python\Python27\Lib\site-packages
+目录下即可。
+
+4、测试1
+> ipython
+> import cv2
+> （未出现异常信息即可）
+
+5、测试2
+
+# coding=utf-8
+
+'''
+Created on 2016年4月21日
+
+@author: leimingming.lm
+'''
+
+import numpy as np
+import cv2
+
+imgFile = "C:\\Users\\leimingming.lm\\Desktop\\image.png"
+
+img = cv2.imread(imgFile)
+
+cv2.imshow("Image", img)
+cv2.waitKey (0)    
+cv2.destroyAllWindows()  
