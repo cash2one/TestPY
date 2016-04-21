@@ -4,6 +4,7 @@
 Created on 2016年4月21日
 
 @author: leimingming.lm
+@description: 人脸识别的小实例，挺好玩的。可把人脸圈出来。
 '''
 
 import cv2
@@ -15,22 +16,9 @@ cv2.namedWindow( TESTNAME )  # 命名一个窗口
 cap = cv2.VideoCapture( 0 )  # 打开0号摄像头
 success, frame = cap.read()  # 读取一桢图像，前一个返回值是是否成功，后一个返回值是图像本身
 # print success, frame
-
-cameraCapture = cv2.VideoCapture( 0 )
-fps = 30  # an assumption
-# size = ( int( cameraCapture.get( cv2.CV_CAP_PROP_FRAME_HEIGHT ) ), int( cameraCapture.get( cv2.CV_CAP_PROP_FRAME_HEIGHT ) ) )
-# videoWriter = cv2.VideoWriter('MyOutputVid.avi', cv2.cv.CV_FOURCC('I','4','2','0'), fps, size)
-videoWriter = cv2.VideoWriter( 'C:/Users/leimingming.lm/Desktop/MyOutputVid.avi',
-                               CV_FOURCC('P', 'I', 'M', '1')  )
-success, frame = cameraCapture.read()
-numFramesRemaining = 10 * fps - 1
-while success and numFramesRemaining > 0:
-    videoWriter.write( frame )
-    success, frame = cameraCapture.read()
-    numFramesRemaining -= 1
-
+ 
 color = ( 0, 0, 0 )  # 设置人脸框的颜色
-classfier = cv2.CascadeClassifier( "haarcascade_frontalface_alt.xml" )  # 定义分类器
+classfier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
 
 while success:
     success, frame = cap.read()

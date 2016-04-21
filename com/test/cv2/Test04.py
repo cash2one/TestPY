@@ -74,9 +74,9 @@ def repeat():
         # 获得人脸所在位置的数据
     for ( x, y, w, h ) in faces:
        # print x,y
-        if x < 210:
+        if x <= 210:
             print "right"
-        elif x > 310:
+        elif x >= 310:
             print "left"
 #         cv.Rectangle( frame, ( x, y ), ( x + w, y + h ), ( 0, 128, 0 ), 2 )  # 在相应位置标识一个矩形 边框属性(0,0,255)红色 20宽度
         cv2.rectangle( frame, ( x, y ), ( x + w, y + h ), ( 0, 128, 0 ), 2 )
