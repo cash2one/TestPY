@@ -15,6 +15,9 @@ import cv2
 
 FRAMENAME = "Face Recognition"
 GREYNAME = "Grey"
+
+color = ( 0, 0, 0 )  # 设置人脸框的颜色
+
 # cv.NamedWindow("W1", cv.CV_WINDOW_AUTOSIZE)
 cv2.namedWindow( FRAMENAME )
 cv2.resizeWindow( FRAMENAME, 600, 600 )
@@ -79,7 +82,7 @@ def repeat():
         elif x >= 310:
             print "left"
 #         cv.Rectangle( frame, ( x, y ), ( x + w, y + h ), ( 0, 128, 0 ), 2 )  # 在相应位置标识一个矩形 边框属性(0,0,255)红色 20宽度
-        cv2.rectangle( frame, ( x, y ), ( x + w, y + h ), ( 0, 128, 0 ), 2 )
+        cv2.rectangle( frame, ( x, y ), ( x + w, y + h ), ( 0, 128, 0 ) )
 
 #         cv.ShowImage( "W1", greyscale )  # 显示互有边框的图片
         cv2.imshow( GREYNAME, greyscale )
