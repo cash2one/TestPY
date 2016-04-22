@@ -3,8 +3,8 @@
 '''
 Created on 2016年4月21日
 
-@author: leimingming.lm
-@description: 人脸识别的小实例，挺好玩的。可把人脸圈出来。
+@author: Thunderbolt.Lei（花名：穆雷）
+@description: 人脸识别的小实例，挺好玩的。可把人脸圈出来。<br>
 '''
 
 import cv2
@@ -16,14 +16,14 @@ cv2.namedWindow( TESTNAME )  # 命名一个窗口
 cap = cv2.VideoCapture( 0 )  # 打开0号摄像头
 success, frame = cap.read()  # 读取一桢图像，前一个返回值是是否成功，后一个返回值是图像本身
 # print success, frame
- 
+
 color = ( 0, 0, 0 )  # 设置人脸框的颜色
 classfier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
 
 while success:
     success, frame = cap.read()
     size = frame.shape[:2]  # 获得当前桢彩色图像的大小
-    print size
+#     print size
 
     image = np.zeros( size, dtype = np.float16 )  # 定义一个与当前桢图像大小相同的的灰度图像矩阵
 #     print image

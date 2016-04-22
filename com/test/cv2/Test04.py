@@ -3,7 +3,8 @@
 '''
 Created on 2016年4月21日
 
-@author: leimingming.lm
+@author: Thunderbolt.Lei（花名：穆雷）
+@description: <br>
 '''
 
 # 转载请注明：@小五义http://www.cnblogs.com/xiaowuyi  QQ群：64770604
