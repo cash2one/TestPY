@@ -29,7 +29,7 @@ class AutoEncoder:
             self.bias_vis = params[1]
             self.bias_hid = params[2]
 
-        print self
+#         print self
 
     def __str__( self ):
         rval = '%s\n' % self.__class__.__name__

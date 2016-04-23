@@ -10,7 +10,7 @@ Created on 2016年4月22日
 # import Image as im
 from PIL import Image as im
 
-FILEPATH = "C:\Users\leimingming.lm\Desktop\image.png"
+FILEPATH = "../../../datas/imgs/TidyBear.jpg"
 
 img = im.open(FILEPATH, "r")
 
