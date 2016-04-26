@@ -4,7 +4,7 @@
 Created on ${date}
 
 @author: Thunderbolt.Lei （花名：穆雷）
-@description: <br>
+@description: 摄像窗口是倒置的，还未解决，可能是调用方法参数的问题。<br>
 '''
 import numpy as np
 import cv2
