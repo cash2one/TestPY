@@ -4,7 +4,8 @@
 Created on 2015年6月5日
 
 @author: BFD474
-@description: 未解决问题 ImportError: No module named utils.fixes，已经安装 utils 包，但还有问题
+@description: 未解决问题 ImportError: No module named utils.fixes，已经安装 utils 包，但还有问题。
+              可能跟系统有问题，目前使用的是WINDOWS。
 '''
 
 import numpy as np
