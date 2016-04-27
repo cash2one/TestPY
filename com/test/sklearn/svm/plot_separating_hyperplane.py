@@ -4,10 +4,11 @@
 Created on 2015年6月5日
 
 @author: BFD474
+@description: 未解决问题 ImportError: No module named utils.fixes，已经安装 utils 包，但还有问题
 '''
 
 import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 from sklearn import svm
 
 # we create 40 separable points
@@ -19,7 +20,7 @@ print X
 print Y
 
 # fit the model
-clf = svm.SVC( kernel='linear' )
+clf = svm.SVC( kernel = 'linear' )
 clf.fit( X, Y )
 
 # get the separating hyperplane
@@ -41,8 +42,8 @@ plt.plot( xx, yy_down, 'k--' )
 plt.plot( xx, yy_up, 'k--' )
 
 plt.scatter( clf.support_vectors_[:, 0], clf.support_vectors_[:, 1],
-            s=80, facecolors='none' )
-plt.scatter( X[:, 0], X[:, 1], c=Y, cmap=plt.cm.Paired )
+            s = 80, facecolors = 'none' )
+plt.scatter( X[:, 0], X[:, 1], c = Y, cmap = plt.cm.Paired_r )
 
 plt.axis( 'tight' )
 plt.show()
