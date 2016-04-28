@@ -10,7 +10,7 @@ Created on 2015年5月11日
 '''初始化一个pycurl对象，尽管urllib2也支持 cookie 但是在登录cas系统时总是失败，并且没有搞清楚失败的原因。这里采用pycurl主要是因为pycurl设置了cookie后，可以正常登录Cas系统'''
 
 import StringIO
-import urllib
+import urllib as urllib
 
 from pycurl import *
 
