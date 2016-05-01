@@ -4,7 +4,7 @@
 Created on 2016年4月21日
 
 @author: Thunderbolt.Lei（花名：穆雷）
-@description: <br>
+@description: 此实例是正解，可以正常运行于WINDOWS/LINUX下。SS<br>
 '''
 
 # 转载请注明：@小五义http://www.cnblogs.com/xiaowuyi  QQ群：64770604
@@ -63,8 +63,8 @@ def repeat():
     cv2.line( frame, ( 0, 320 ), ( 640, 320 ), ( 0, 255, 255 ), 1 )
 
         # detect objects
-#     cascade = cv.Load( '/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml' )
-    cascade = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
+    cascade = cv2.CascadeClassifier( '/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml' )
+#     cascade = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
     # 加载Intel公司的训练库
 
         # 检测图片中的人脸，并返回一个包含了人脸信息的对象faces

@@ -9,16 +9,18 @@ Created on 2016年4月21日
 
 import cv2
 import numpy as np
+from matplotlib import pyplot as plt
 
 TESTNAME = "Face Recognition"
 
-cv2.namedWindow( TESTNAME )  # 命名一个窗口
+# cv2.namedWindow( TESTNAME )  # 命名一个窗口
 cap = cv2.VideoCapture( 0 )  # 打开0号摄像头
 success, frame = cap.read()  # 读取一桢图像，前一个返回值是是否成功，后一个返回值是图像本身
 # print success, frame
 
 color = ( 0, 0, 0 )  # 设置人脸框的颜色
-classfier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
+# classfier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
+classfier = cv2.CascadeClassifier( "/usr/local/opencv-3.1.0/data/haarcascades/haarcascade_frontalcatface.xml" )  # 定义分类器
 
 while success:
     success, frame = cap.read()
@@ -41,6 +43,10 @@ while success:
         for faceRect in faceRects:  # 对每一个人脸画矩形框
                 x, y, w, h = faceRect
                 cv2.rectangle( frame, ( x, y ), ( x + w, y + h ), color )
+#     plt.imshow(frame, cmap = 'gray', interpolation = 'bicubic')
+# plt.show()
+
+    cv2.imshow(None, frame)
     cv2.imshow( TESTNAME, frame )  # 显示图像
     key = cv2.waitKey( 10 )
     c = chr( key & 255 )
