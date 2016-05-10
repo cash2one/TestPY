@@ -52,6 +52,7 @@ print ( x + y ), cv2.add( x, y )
 img02=  cv2.imread("../../../datas/imgs/bg01.png")
 
 # 图像的混合
+# 此时的图像结果显示颜色略淡，是因为设置混合时的权重的原因
 # g(x) = (1 - alpha) f0(x) + alpha f1(x)
 dst = cv2.addWeighted( img01, 0.7, img02, 0.3, 0 )
 cv2.imshow( 'dst', dst )
