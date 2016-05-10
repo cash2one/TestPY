@@ -43,5 +43,19 @@ ppt.subplot( 234 ), ppt.imshow( reflect101, 'gray' ), ppt.title( 'REFLECT_101' )
 ppt.subplot( 235 ), ppt.imshow( wrap, 'gray' ), ppt.title( 'WRAP' )
 ppt.subplot( 236 ), ppt.imshow( constant, 'gray' ), ppt.title( 'CONSTANT' )
 
+
+# 图像上的运算
+img01 = cv2.imread( "../../../datas/imgs/Faces.jpg" )
+x = np.uint8( img[466, 466] )
+y = np.uint8( img01[250, 250] )
+print ( x + y ), cv2.add( x, y )
+img02=  cv2.imread("../../../datas/imgs/bg01.png")
+
+# 图像的混合
+# g(x) = (1 - alpha) f0(x) + alpha f1(x)
+dst = cv2.addWeighted( img01, 0.7, img02, 0.3, 0 )
+cv2.imshow( 'dst', dst )
+
+
 ppt.imshow( img )
 ppt.show()

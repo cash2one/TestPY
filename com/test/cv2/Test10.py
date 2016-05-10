@@ -10,7 +10,7 @@ Created on 2016年4月29日 下午2:23:39
 import numpy as np
 import cv2
 
-imgPath = "D:\developments\eclipse-jee-luna-java8-work\myprojects\TestPY\datas\imgs\Faces.jpg"
+imgPath = "../../../datas/imgs/Faces.jpg"
 img = cv2.imread( imgPath )
 img[100, 100] = [255, 255, 255]
 
