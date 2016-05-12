@@ -21,14 +21,13 @@ img = cv2.imread( "../../../datas/imgs/Faces.jpg" )
 # plt.xticks( [] ), plt.yticks( [] )
 # plt.show()
 
-# ## 归一化卷积框
-# blur = cv2.boxFilter(img, 2, ( 11, 11 ), normalize = False )
-# plt.subplot( 121 ), plt.imshow( img ), plt.title( 'Original' )
-# plt.xticks( [] ), plt.yticks( [] )
-# plt.subplot( 122 ), plt.imshow( blur ), plt.title( 'Blurred' )
-# plt.xticks( [] ), plt.yticks( [] )
-# plt.show()
-
+## 归一化卷积框
+blur = cv2.boxFilter(img, 2, ( 11, 11 ), normalize = False )
+plt.subplot( 121 ), plt.imshow( img ), plt.title( 'Original' )
+plt.xticks( [] ), plt.yticks( [] )
+plt.subplot( 122 ), plt.imshow( blur ), plt.title( 'Blurred' )
+plt.xticks( [] ), plt.yticks( [] )
+plt.show()
 
 
 
