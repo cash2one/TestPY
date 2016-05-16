@@ -12,6 +12,7 @@ from matplotlib import pyplot as plt
 
 import numpy as np
 
+img_url = '../../../datas/imgs/TidyBear.jpg'
 
 # ##
 def drawImage( name, img ):
@@ -23,7 +24,7 @@ def drawImage( name, img ):
             break
     cv2.destroyAllWindows()
 
-img = cv2.imread( '../../../datas/imgs/TidyBear.jpg' )
+img = cv2.imread( img_url )
 img_gray = cv2.cvtColor( img, cv2.COLOR_BGR2GRAY )
 drawImage( 'image to gray', img_gray )
 
@@ -120,14 +121,41 @@ img_enclosing_circle = cv2.circle( img_gray, center, radius, ( 0, 255, 0 ), 2 )
 drawImage( "img_enclosing_circle", img_enclosing_circle )
 
 
-# ## 8、椭圆拟合
-# 使用的函数为cv2.ellipse()，返回值其实就是旋转边界矩形的内切圆。
-# ellipse = cv2.fitEllipse( cnt )
-from matplotlib.patches import Ellipse, Circle
-ellipse = Ellipse( xy = ( 0.0, 0.0 ), width = 4, height = 8, angle = 30.0, facecolor = 'yellow', alpha = 0.3 )
-print "ellipse: %s" % ( ellipse )
-img_fit_ellipse = cv2.ellipse( img, ellipse, ( 0, 255, 0 ), 2 )
-drawImage( "img_fit_ellipse", img_fit_ellipse )
+# # ## 8、椭圆拟合
+# # 使用的函数为cv2.ellipse()，返回值其实就是旋转边界矩形的内切圆。
+# # ellipse = cv2.fitEllipse( cnt )
+# from matplotlib.patches import Ellipse, Circle
+# # ellipse = Ellipse( xy = ( 1.0, 1.0 ), width = 4, height = 8, angle = 30.0, facecolor = 'yellow', alpha = 0.3 )
+# # print "ellipse: %s" % ( ellipse )
+# ellipse = cv2.fitEllipse(cnt)
+# img_fit_ellipse = cv2.ellipse(img, ellipse, ( 0, 255, 0 ), 2 )
+# drawImage( "img_fit_ellipse", img_fit_ellipse )
+
+
+# ## 9、直线拟合
+rows, cols = img.shape[:2]
+# cv2.fitLine(points, distType, param, reps, aeps[, line ]) → line
+# points – Input vector of 2D or 3D points, stored in std::vector<> or Mat.
+# line – Output line parameters. In case of 2D fitting, it should be a vector of
+# 4 elements (likeVec4f) - (vx, vy, x0, y0), where (vx, vy) is a normalized
+# vector collinear to the line and (x0, y0) is a point on the line. In case of
+# 3D fitting, it should be a vector of 6 elements (like Vec6f) - (vx, vy, vz,
+# x0, y0, z0), where (vx, vy, vz) is a normalized vector collinear to the line
+# and (x0, y0, z0) is a point on the line.
+# distType – Distance used by the M-estimator
+# distType=CV_DIST_L2
+# ρ(r) = r2 /2 (the simplest and the fastest least-squares method)
+# param – Numerical parameter ( C ) for some types of distances. If it is 0, an optimal value
+# is chosen.
+# reps – Sufficient accuracy for the radius (distance between the coordinate origin and the
+# line).
+# aeps – Sufficient accuracy for the angle. 0.01 would be a good default value for reps and
+# aeps.
+[vx, vy, x, y] = cv2.fitLine( cnt, cv2.DIST_L2, 0, 0.01, 0.01 )
+lefty = int( ( -x * vy / vx ) + y )
+righty = int( ( ( cols - x ) * vy / vx ) + y )
+img_fit_line = cv2.line( img, ( cols - 1, righty ), ( 0, lefty ), ( 0, 255, 0 ), 2 )
+drawImage("image_fit_line", img_fit_line)
 
 
 
