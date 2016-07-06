@@ -9,13 +9,12 @@ Created on Aug 7, 2015
 import theano.tensor as T
 from theano import function
 
-# x = T.dscalar('x')
-# y = T.dscalar('y')
-# z = x + y
-# f = function([x, y], z)
-# 
-# ret = f(2,3)
-# print ret
+x = T.dscalar('x')
+y = T.dscalar('y')
+z = x + y
+f = function([x, y], z)
+ret = f(2,3)
+print ret
 
 x = T.dscalar('x')
 y = T.dscalar('y')

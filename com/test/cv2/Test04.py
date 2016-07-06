@@ -63,8 +63,8 @@ def repeat():
     cv2.line( frame, ( 0, 320 ), ( 640, 320 ), ( 0, 255, 255 ), 1 )
 
         # detect objects
-    cascade = cv2.CascadeClassifier( '/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml' )
-#     cascade = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
+#     cascade = cv2.CascadeClassifier( '/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml' )
+    cascade = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
     # 加载Intel公司的训练库
 
         # 检测图片中的人脸，并返回一个包含了人脸信息的对象faces

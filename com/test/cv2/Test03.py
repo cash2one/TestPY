@@ -13,7 +13,7 @@ import numpy as np
 cv2.namedWindow( "Face Recognition" )
 cap = cv2.VideoCapture( 0 )
 success, frame = cap.read()
-classifier = cv2.CascadeClassifier( "/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml" )  # 确保此xml文件与该py文件在一个文件夹下，否则将这里改为绝对路径，此xml文件可在D:\My Documents\Downloads\opencv\sources\data\haarcascades下找到。
+classifier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 确保此xml文件与该py文件在一个文件夹下，否则将这里改为绝对路径，此xml文件可在D:\My Documents\Downloads\opencv\sources\data\haarcascades下找到。
 
 while (success):
     success, frame = cap.read()

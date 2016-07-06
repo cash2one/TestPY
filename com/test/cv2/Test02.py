@@ -19,8 +19,8 @@ success, frame = cap.read()  # 读取一桢图像，前一个返回值是是否�
 # print success, frame
 
 color = ( 0, 0, 0 )  # 设置人脸框的颜色
-# classfier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
-classfier = cv2.CascadeClassifier( "/usr/local/opencv-3.1.0/data/haarcascades/haarcascade_frontalcatface.xml" )  # 定义分类器
+classfier = cv2.CascadeClassifier( "D:/developments/python/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml" )  # 定义分类器
+# classfier = cv2.CascadeClassifier( "/usr/local/opencv-3.1.0/data/haarcascades/haarcascade_frontalcatface.xml" )  # 定义分类器
 
 while success:
     success, frame = cap.read()
