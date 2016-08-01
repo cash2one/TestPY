@@ -5,7 +5,6 @@ Created on 2016年8月1日 上午10:49:44
 
 @author: Thunderbolt.Lei （花名：穆雷）
 @description: 测试OK，将mnist.zip解压到一个目录下，即可测试<br>
-<<<<<<< HEAD
 
     GPU run command:
         THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python cnn.py
@@ -17,6 +16,7 @@ Created on 2016年8月1日 上午10:49:44
 现在keras的API也发生了一些的变化，建议及推荐直接上keras.io看更加详细的教程。
 参考：https://github.com/wepe
 '''
+
 # 导入各种用到的模块组件
 # from __future__ import absolute_import
 # from __future__ import print_function
@@ -33,7 +33,6 @@ import random
 import numpy as np
 
 np.random.seed( 1024 )  # for reproducibility
-
 
 # 加载数据
 data, label = load_data()
