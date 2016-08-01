@@ -5,6 +5,7 @@ Created on 2016年8月1日 上午10:49:44
 
 @author: Thunderbolt.Lei （花名：穆雷）
 @description: 测试OK，将mnist.zip解压到一个目录下，即可测试<br>
+<<<<<<< HEAD
 
     GPU run command:
         THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python cnn.py
