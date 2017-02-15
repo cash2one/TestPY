@@ -3,7 +3,7 @@
 '''
 Created on 2017年2月15日
 @author: leiming4
-@description: 
+@description: 小测试实例
 '''
 
 import theano

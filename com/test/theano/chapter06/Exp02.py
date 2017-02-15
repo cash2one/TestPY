@@ -14,6 +14,7 @@ theano.config.warn.subtensor_merge_bug = False
 coefficients = theano.tensor.vector( "coefficients" )
 x = T.scalar( "x" )
 max_coefficients_supported = 10000
+
 # Generate the components of the polynomial
 full_range = theano.tensor.arange( max_coefficients_supported )
 components, updates = theano.scan( fn = lambda coeff, power, free_var:
