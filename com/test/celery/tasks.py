@@ -14,9 +14,7 @@ def sendmail( mail ):
     
 
 from matplotlib import pyplot
-
 import numpy as np, numpy.linalg as nplg
-
 
 
 rets = np.array( [ 1, 2, 4, 8, 16, 32, 64, 128, 256] )
@@ -27,3 +25,8 @@ freqs = np.array( [ 0., 0.69314718, 1.09861229, 1.38629436, 1.60943791,
 pyplot.plot( rets, freqs, 'o' )
 pyplot.plot( rets, freqs[0] * rets + freqs[1] )
 pyplot.show()
+
+
+import subprocess as subp
+
+subp.call(["date"])
